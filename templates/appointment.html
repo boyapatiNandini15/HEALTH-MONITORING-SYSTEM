@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Book Appointment</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>
+        Book Appointment
+    </h1>
+
+    <h2>
+        {{ doctor.name }}
+    </h2>
+
+    <p>
+        {{ doctor.specialization }}
+    </p>
+
+
+    <form method="POST">
+
+        <label>Appointment Date</label>
+
+        <input
+            type="date"
+            name="date"
+            required
+        >
+
+
+        <label>Appointment Time</label>
+
+        <input
+            type="time"
+            name="time"
+            required
+        >
+
+
+        <label>Reason for Appointment</label>
+
+        <textarea
+            name="reason"
+            placeholder="Enter reason"
+            required
+        ></textarea>
+
+
+        <button type="submit">
+            Confirm Appointment
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

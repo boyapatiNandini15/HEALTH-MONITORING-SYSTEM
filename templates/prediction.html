@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>AI Health Prediction</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        AI Health Monitor
+    </div>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/health">Health Monitor</a>
+
+        <a href="/doctors">Doctors</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="prediction-container">
+
+    <h1>AI Health Risk Screening</h1>
+
+
+    <div class="prediction-card">
+
+        <h2>
+            Risk Level
+        </h2>
+
+        <div class="risk">
+
+            {{ risk }}
+
+        </div>
+
+        <p>
+            BMI: {{ record.bmi }}
+        </p>
+
+        <p>
+            Heart Rate: {{ record.heart_rate }} bpm
+        </p>
+
+        <p>
+            Blood Sugar: {{ record.blood_sugar }}
+        </p>
+
+        <hr>
+
+        <h3>Recommendation</h3>
+
+        <p>
+            {{ recommendation }}
+        </p>
+
+        <small>
+            This screening is for educational purposes
+            and is not a medical diagnosis.
+        </small>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Health Monitoring</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        AI Health Monitor
+    </div>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="form-container large">
+
+    <h1>Personal Health Monitoring</h1>
+
+    <p>
+        Enter your latest health information.
+    </p>
+
+
+    <form method="POST">
+
+        <label>Age</label>
+
+        <input
+            type="number"
+            name="age"
+            required
+        >
+
+
+        <label>Weight (kg)</label>
+
+        <input
+            type="number"
+            name="weight"
+            step="0.1"
+            required
+        >
+
+
+        <label>Height (cm)</label>
+
+        <input
+            type="number"
+            name="height"
+            step="0.1"
+            required
+        >
+
+
+        <label>Blood Pressure</label>
+
+        <input
+            type="text"
+            name="blood_pressure"
+            placeholder="120/80"
+            required
+        >
+
+
+        <label>Heart Rate (bpm)</label>
+
+        <input
+            type="number"
+            name="heart_rate"
+            required
+        >
+
+
+        <label>Blood Sugar</label>
+
+        <input
+            type="number"
+            name="blood_sugar"
+            step="0.1"
+            required
+        >
+
+
+        <label>Sleep Hours</label>
+
+        <input
+            type="number"
+            name="sleep_hours"
+            step="0.1"
+            required
+        >
+
+
+        <label>Physical Activity (minutes)</label>
+
+        <input
+            type="number"
+            name="activity_minutes"
+            required
+        >
+
+
+        <button type="submit">
+            Analyze Health
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

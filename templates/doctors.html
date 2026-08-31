@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Doctors</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        AI Health Monitor
+    </div>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/health">Health</a>
+
+        <a href="/appointments">Appointments</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="dashboard">
+
+    <h1>Available Doctors</h1>
+
+
+    <div class="cards">
+
+        {% for doctor in doctors %}
+
+        <div class="card">
+
+            <h2>
+                {{ doctor.name }}
+            </h2>
+
+            <h3>
+                {{ doctor.specialization }}
+            </h3>
+
+            <p>
+                Experience:
+                {{ doctor.experience }} years
+            </p>
+
+            <p>
+                Available:
+                {{ doctor.available_time }}
+            </p>
+
+
+            <a href="/appointment/{{ doctor.id }}">
+
+                <button>
+                    Book Appointment
+                </button>
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

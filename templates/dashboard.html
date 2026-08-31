@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        AI Health Monitor
+    </div>
+
+    <div>
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/health">Health Monitor</a>
+
+        <a href="/prediction">AI Prediction</a>
+
+        <a href="/doctors">Doctors</a>
+
+        <a href="/appointments">Appointments</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="dashboard">
+
+    <h1>
+        Welcome, {{ current_user.name }}
+    </h1>
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>Health Monitoring</h3>
+
+            <p>
+                Enter your latest health information.
+            </p>
+
+            <a href="/health">
+
+                <button>
+                    Add Health Data
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>AI Prediction</h3>
+
+            <p>
+                View your latest health-risk screening.
+            </p>
+
+            <a href="/prediction">
+
+                <button>
+                    View Prediction
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Appointments</h3>
+
+            <p>
+                Book and manage appointments.
+            </p>
+
+            <a href="/doctors">
+
+                <button>
+                    Find Doctor
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <h2>Recent Health Records</h2>
+
+    <table>
+
+        <tr>
+
+            <th>Date</th>
+
+            <th>BMI</th>
+
+            <th>Heart Rate</th>
+
+            <th>Blood Sugar</th>
+
+            <th>Risk</th>
+
+        </tr>
+
+
+        {% for record in records %}
+
+        <tr>
+
+            <td>{{ record.id }}</td>
+
+            <td>{{ record.bmi }}</td>
+
+            <td>{{ record.heart_rate }}</td>
+
+            <td>{{ record.blood_sugar }}</td>
+
+            <td>{{ record.risk }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
